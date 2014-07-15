@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module>
+	<name>sisowmc</name>
+	<displayName><![CDATA[Sisow MisterCash]]></displayName>
+	<version><![CDATA[3.5.0]]></version>
+	<description><![CDATA[Verwerk MisterCash betalingen via Sisow.]]></description>
+	<author><![CDATA[Sisow]]></author>
+	<tab><![CDATA[payments_gateways]]></tab>
+	<confirmUninstall><![CDATA[Weet u het zeker dat u Sisow MisterCash wilt verwijderen?]]></confirmUninstall>
+	<is_configurable>1</is_configurable>
+	<need_instance>1</need_instance>
+	<limited_countries></limited_countries>
+</module>

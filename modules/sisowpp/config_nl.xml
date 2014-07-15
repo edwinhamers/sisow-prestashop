@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module>
+	<name>sisowpp</name>
+	<displayName><![CDATA[Sisow PayPal]]></displayName>
+	<version><![CDATA[3.5.0]]></version>
+	<description><![CDATA[Verwerk PayPal betalingen via Sisow.]]></description>
+	<author><![CDATA[Sisow]]></author>
+	<tab><![CDATA[payments_gateways]]></tab>
+	<confirmUninstall><![CDATA[Weet u het zeker dat u Sisow PayPal wilt verwijderen?]]></confirmUninstall>
+	<is_configurable>1</is_configurable>
+	<need_instance>1</need_instance>
+	<limited_countries></limited_countries>
+</module>
