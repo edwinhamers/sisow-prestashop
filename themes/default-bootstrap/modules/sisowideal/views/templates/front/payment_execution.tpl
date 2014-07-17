@@ -25,33 +25,42 @@
 
 {capture name=path}{l s='iDEAL payment' mod='sisowideal'}{/capture}
 
-<h2>{l s='Order summary' mod='sisowideal'}</h2>
+<h1 class="page-heading">
+    {l s='Order summary' mod='sisowideal'}
+</h1>
 
 {assign var='current_step' value='payment'}
 {include file="$tpl_dir./order-steps.tpl"}
 
-<h3>{l s='iDEAL payment' mod='sisowideal'}</h3>
 <form name="sisowideal_form" id="sisowideal_form" action="{$base_dir_ssl}modules/sisow/payment.php?payment={$paymentcode}&paymentname={$paymentname}" method="post">
-<p>
-	<img src="https://www.sisow.nl/Sisow/images/ideal/idealklein.gif" alt="iDEAL" style="float:left; margin: 0px 10px 5px 0px;" />
-	{l s='You have chosen to pay with iDEAL.' mod='sisowideal'}
-	</br>
-	{l s='Choose your bank:' mod='sisowideal'}
-	<select name="issuerid" id="issuerid">
-		<option value="">{l s='Choose your bank....' mod='sisowideal'}</option>
-	
-		{foreach from=$issuers key=id item=issuer}
-			<option value="{$id}">{$issuer}</option>
-		{/foreach}	
-	</select>
-</p>
-
-<p class="cart_navigation" id="cart_navigation">
-	<a href="{$link->getPageLink('order', true, NULL, "step=3")|escape:'html'}" class="button_large">{l s='Other payment methods' mod='sisowideal'}</a>
-	<input type="submit" value="{l s='I confirm my order' mod='sisowideal'}" id="sisowsubmit" class="exclusive_large" />
-</p>
+	<div class="box cheque-box">
+		<h3 class="page-subheading">
+			{l s='iDEAL payment' mod='sisowideal'}
+		</h3>
+		<p class="cheque-indent">
+			<strong class="dark">
+			<img src="https://www.sisow.nl/Sisow/images/ideal/idealklein.gif" alt="iDEAL" style="float:left; margin: 0px 10px 5px 0px;" />
+				{l s='You have chosen to pay with iDEAL.' mod='sisowideal'}
+			</strong>
+		</p>
+		<p>{l s='Choose your bank:' mod='sisowideal'}
+			<select name="issuerid" id="issuerid">
+				<option value="">{l s='Choose your bank....' mod='sisowideal'}</option>
+					{foreach from=$issuers key=id item=issuer}
+						<option value="{$id}">{$issuer}</option>
+				{/foreach}	
+			</select>
+		</p>
+	</div><!-- .cheque-box -->
+	<p class="cart_navigation clearfix" id="cart_navigation">
+		<a class="button-exclusive btn btn-default" href="{$link->getPageLink('order', true, NULL, "step=3")|escape:'html':'UTF-8'}">
+			<i class="icon-chevron-left"></i>{l s='Other payment methods' mod='sisowideal'}
+		</a>
+		<button class="button btn btn-default button-medium" type="submit">
+			<span>{l s='I confirm my order' mod='sisowideal'}<i class="icon-chevron-right right"></i></span>
+		</button>
+	</p>
 </form>
-
 <script type="text/javascript">
 	var mess_sisow_error = "{l s='Choose your bank!' mod='sisowideal' js=1}";
 	{literal}
