@@ -27,8 +27,8 @@
 <div class="row">
 	<div class="col-xs-12 col-md-6">
         <p class="payment_module sisow">
-			<a href="javascript:void(0)" onclick="$('#sisow_{$paymentcode}_form').submit();" id="sisow{$paymentcode}_process_payment" title="{l s='Pay with PayPal' mod='paypal'}">
-				<img src="{$base_dir_ssl}modules/{$paymentname}/{$paymentcode}.gif" width="64" alt="{$paymenttext}" /> {$paymenttext}				
+			<a href="javascript:void(0)" onclick="$('#sisow_{$paymentcode}_form').submit();" id="sisow{$paymentcode}_process_payment" title="{l s='Pay with Sisow' mod='sisow'}">
+				<img src="{$base_dir_ssl}modules/{$paymentname}/{$paymentcode}.png" width="64" alt="{$paymenttext}" /> {$paymenttext}				
 			</a>
 		</p>
     </div>
@@ -42,8 +42,8 @@
 </style>
 {else}
 <p class="payment_module">
-	<a href="javascript:void(0)" onclick="$('#sisow_{$paymentcode}_form').submit();" id="sisow{$paymentcode}_process_payment" title="{l s='Pay with PayPal' mod='paypal'}">
-		<img src="{$base_dir_ssl}modules/{$paymentname}/{$paymentcode}.gif" width="64" alt="{$paymenttext}" /> {$paymenttext}			
+	<a href="javascript:void(0)" onclick="$('#sisow_{$paymentcode}_form').submit();" id="sisow{$paymentcode}_process_payment" title="{l s='Pay with Sisow' mod='sisow'}">
+		<img src="{$base_dir_ssl}modules/{$paymentname}/{$paymentcode}.png" width="64" alt="{$paymenttext}" /> {$paymenttext}			
 	</a>
 </p>
 
