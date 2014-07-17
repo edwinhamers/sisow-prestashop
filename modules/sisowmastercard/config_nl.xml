@@ -2,7 +2,7 @@
 <module>
 	<name>sisowmastercard</name>
 	<displayName><![CDATA[Sisow MasterCard]]></displayName>
-	<version><![CDATA[3.5.0]]></version>
+	<version><![CDATA[3.6.4]]></version>
 	<description><![CDATA[Verwerk MasterCard betalingen via Sisow.]]></description>
 	<author><![CDATA[Sisow]]></author>
 	<tab><![CDATA[payments_gateways]]></tab>

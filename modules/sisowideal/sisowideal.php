@@ -13,7 +13,7 @@ class SisowIdeal extends PaymentModule
 		$this->name = 'sisowideal';
 		$this->paymentname = 'iDEAL';
 		$this->tab = 'payments_gateways';
-		$this->version = '3.5.0';
+		$this->version = '3.6.4';
 		$this->author = 'Sisow';
 		
 		$this->bootstrap = true;

@@ -10,7 +10,7 @@ class SisowWg extends PaymentModule
 		$this->paymentname = 'Webshop Giftcard';
 		$this->name = 'sisowwg';
 		$this->tab = 'payments_gateways';
-		$this->version = '3.5.0';
+		$this->version = '3.6.4';
 		$this->author = 'Sisow';
 		
 		$this->bootstrap = true;
