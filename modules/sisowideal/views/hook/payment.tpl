@@ -7,7 +7,7 @@
 <div class="row">
 	<div class="col-xs-12 col-md-6">
         <p class="payment_module sisow">
-			<a href="javascript:void(0)" onclick="$('#sisow_{$paymentcode}_form').submit();" class="sisow" id="sisow{$paymentcode}_process_payment" title="{l s='Pay with Sisow iDEAL' mod='sisowideal'}">
+			<a href="javascript:void(0)" onclick="$('#sisow_{$paymentcode}_form').submit();" class="sisowideal" id="sisow{$paymentcode}_process_payment" title="{l s='Pay with Sisow iDEAL' mod='sisowideal'}">
 				<img src="https://www.sisow.nl/Sisow/images/ideal/idealklein.gif" width="64" alt="iDEAL" /> {$paymenttext}				
 			</a>
 		</p>
@@ -22,7 +22,7 @@
 </style>
 {else}
 <p class="payment_module">
-	<a href="javascript:void(0)" onclick="$('#sisow_{$paymentcode}_form').submit();" class="sisow" id="sisow{$paymentcode}_process_payment" title="{l s='Pay with Sisow iDEAL' mod='sisowideal'}">
+	<a href="javascript:void(0)" onclick="$('#sisow_{$paymentcode}_form').submit();" class="sisowideal" id="sisow{$paymentcode}_process_payment" title="{l s='Pay with Sisow iDEAL' mod='sisowideal'}">
 		<img src="https://www.sisow.nl/Sisow/images/ideal/idealklein.gif" width="64" alt="iDEAL" /> {$paymenttext}				
 	</a>
 </p>

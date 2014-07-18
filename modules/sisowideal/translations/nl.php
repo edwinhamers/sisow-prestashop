@@ -36,6 +36,7 @@ $_MODULE['<{sisowideal}prestashop>sisowideal_eec39bf42bd135971fb2d838c67d1449'] 
 $_MODULE['<{sisowideal}prestashop>sisowideal_a64db959966ba8d07c8b5d9493fcc21f'] = 'Transactie fout!';
 $_MODULE['<{sisowideal}prestashop>sisowideal_b220d677d22dbf069db821277ff1b2e5'] = 'Sisow terugbetaling geslaagd!';
 $_MODULE['<{sisowideal}prestashop>sisowideal_e5d5d9f40763cfe6549bef705e3529a7'] = 'Fout in betalingsmodule, controleer uw module.';
+$_MODULE['<{sisowideal}prestashop>payment_e92e1e967c3a4e185556abf5c94efe8a'] = 'Betaal met Sisow iDEAL';
 $_MODULE['<{sisowideal}prestashop>payment_execution_054087b8dd723bf676c50a0b8f848f7a'] = 'iDEAL Betaling';
 $_MODULE['<{sisowideal}prestashop>payment_execution_f1d3b424cd68795ecaa552883759aceb'] = 'Overzicht Bestelling';
 $_MODULE['<{sisowideal}prestashop>payment_execution_cea8e024a84187b840d60fbac80e9701'] = 'U heeft ervoor gekozen om te betalen met iDEAL';
@@ -44,3 +45,4 @@ $_MODULE['<{sisowideal}prestashop>payment_execution_b9a333dc67c6abf33abca789c68c
 $_MODULE['<{sisowideal}prestashop>payment_execution_569fd05bdafa1712c4f6be5b153b8418'] = 'Kies andere betaalmethode';
 $_MODULE['<{sisowideal}prestashop>payment_execution_46b9e3665f187c739c55983f757ccda0'] = 'Ik bevestig deze bestelling';
 $_MODULE['<{sisowideal}prestashop>payment_execution_64d452459a2ed47b25fc16efbfb0048d'] = 'Kies uw bank!';
+$_MODULE['<{sisowideal}prestashop>payment_52790aa6edb6de4d6501dd6e05f8c206'] = 'Betaal met iDEAL';
