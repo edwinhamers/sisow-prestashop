@@ -10,7 +10,7 @@ class SisowMc extends PaymentModule
 		$this->paymentname = 'MisterCash';
 		$this->name = 'sisowmc';
 		$this->tab = 'payments_gateways';
-		$this->version = '3.5.0';
+		$this->version = '3.6.8';
 		$this->author = 'Sisow';
 		
 		$this->bootstrap = true;

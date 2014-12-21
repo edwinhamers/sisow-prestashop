@@ -5,19 +5,7 @@ class SisowInstall
 	public function createTables()
 	{
 		$db = Db::getInstance();
-		
-		$colums = $db->ExecuteS('SHOW COLUMNS FROM `'._DB_PREFIX_.'sisow`');
-		
-		$old_fields = array();
-		
-		if(isset($colums) && is_array($colums))
-		{
-			foreach($colums as $colum)
-			{
-				$old_fields[] = $colum['Field'];
-			}
-		}
-		
+
 		if (!$db->Execute('
 		CREATE TABLE IF NOT EXISTS `'._DB_PREFIX_.'sisow` (
 			`id` INT NOT NULL AUTO_INCREMENT,
@@ -39,6 +27,15 @@ class SisowInstall
 		) ENGINE='._MYSQL_ENGINE_.' DEFAULT CHARSET=utf8 AUTO_INCREMENT=1'))
 			return false;	
 		
+		$colums = $db->ExecuteS('SHOW COLUMNS FROM `'._DB_PREFIX_.'sisow`');
+		
+		$old_fields = array();
+		
+		if(isset($colums) && is_array($colums))
+			foreach($colums as $colum)
+				$old_fields[] = $colum['Field'];
+
+		
 		$new_fields = array();
 		//new fields version 3.5
 		$new_fields['invoiceurl'] = 'TEXT NOT NULL';
@@ -48,10 +45,8 @@ class SisowInstall
 		
 		
 		foreach ($new_fields as $fieldname => $fieldtype)
-		{
 			if(!in_array($fieldname, $old_fields))
 				$db->Execute("ALTER TABLE `" . _DB_PREFIX_ . "sisow` ADD (`".$fieldname."` ".$fieldtype." )");
-		}
 
 		return true;	
 	}

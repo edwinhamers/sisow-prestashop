@@ -1,7 +1,4 @@
 <?php 
- error_reporting(E_ALL);
- ini_set("display_errors", 1);
-
 if (!defined('_PS_VERSION_'))
 	exit;
 	
@@ -13,7 +10,7 @@ class SisowIdeal extends PaymentModule
 		$this->name = 'sisowideal';
 		$this->paymentname = 'iDEAL';
 		$this->tab = 'payments_gateways';
-		$this->version = '3.5.0';
+		$this->version = '3.6.8';
 		$this->author = 'Sisow';
 		
 		$this->bootstrap = true;
@@ -245,10 +242,15 @@ class SisowIdeal extends PaymentModule
 		$error = '';
 		$error = (isset($_GET[$this->paymentcode.'error'])) ? $_GET[$this->paymentcode.'error'] : '';				 
 			
-		$this->context->smarty->assign($this->paymentcode.'error', $error);
-		$this->context->smarty->assign('paymentcode', $this->paymentcode);
-		$this->context->smarty->assign('paymentname', $this->name);
-		$this->context->smarty->assign('paymenttext', $this->l('Pay with') . ' ' . $this->paymentname);
+		$this->smarty->assign($this->paymentcode.'error', $error);
+		$this->smarty->assign('paymentcode', $this->paymentcode);
+		$this->smarty->assign('paymentname', $this->name);
+		$this->smarty->assign('paymenttext', $this->l('Pay with') . ' ' . $this->paymentname);
+		$this->smarty->assign(array(
+			'this_path' => $this->_path,
+			'this_path_bw' => $this->_path,
+			'this_path_ssl' => Tools::getShopDomainSsl(true, true).__PS_BASE_URI__.'modules/'.$this->name.'/'
+		));
 				
 		return $this->display(__FILE__, 'views/hook/payment.tpl');
 		

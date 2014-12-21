@@ -2,7 +2,7 @@
 <module>
 	<name>sisowmaestro</name>
 	<displayName><![CDATA[Sisow Maestro]]></displayName>
-	<version><![CDATA[3.5.0]]></version>
+	<version><![CDATA[3.6.8]]></version>
 	<description><![CDATA[Verwerk Maestro betalingen via Sisow.]]></description>
 	<author><![CDATA[Sisow]]></author>
 	<tab><![CDATA[payments_gateways]]></tab>

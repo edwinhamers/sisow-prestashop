@@ -1,0 +1,3 @@
+cache/smarty/compile/*
+cache/purifier/HTML/*
+.DS_Store

@@ -7,7 +7,7 @@
 <div class="row">
 	<div class="col-xs-12 col-md-6">
         <p class="payment_module sisow">
-			<a href="javascript:void(0)" onclick="$('#sisow_{$paymentcode}_form').submit();" id="sisow{$paymentcode}_process_payment" title="{l s='Pay with PayPal' mod='paypal'}">
+			<a href="javascript:void(0)" onclick="$('#sisow_{$paymentcode}_form').submit();" id="sisow{$paymentcode}_process_payment" title="{$paymenttext}">
 				<img src="https://www.sisow.nl/Sisow/images/ideal/idealklein.gif" width="64" alt="ideal" /> {$paymenttext}				
 			</a>
 		</p>

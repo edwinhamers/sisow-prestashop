@@ -10,7 +10,7 @@ class SisowOb extends PaymentModule
 		$this->paymentname = 'Overboeking';
 		$this->name = 'sisowob';
 		$this->tab = 'payments_gateways';
-		$this->version = '3.5.0';
+		$this->version = '3.6.8';
 		$this->author = 'Sisow';
 		
 		$this->bootstrap = true;
@@ -282,7 +282,7 @@ class SisowOb extends PaymentModule
 		$this->context->smarty->assign($this->paymentcode.'error', $error);
 		$this->context->smarty->assign('paymentcode', $this->paymentcode);
 		$this->context->smarty->assign('paymentname', $this->name);
-		$this->context->smarty->assign('paymenttext', $this->l('Pay with') . ' ' . $this->paymentname);
+		$this->context->smarty->assign('paymenttext', $this->l('Pay with Bankwire'));
 				
 		return $this->display(__FILE__, '../sisow/views/hook/payment.tpl');
 		

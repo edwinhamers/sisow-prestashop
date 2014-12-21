@@ -27,7 +27,7 @@ class Payment extends PaymentModule
 		$total = floatval(number_format($this->context->cart->getOrderTotal(true, 3), 2, '.', ''));
 				
 		$arr = _prepare($this->context->cart);
-			
+		
 		if($testmode == "test")
 			$arr['testmode'] = 'true';
 
@@ -64,7 +64,6 @@ class Payment extends PaymentModule
 		$sisow = new Sisow($merchantid, $merchantkey, $shopid);
 		$sisow->amount = $total;
 		$sisow->payment = $payment;
-		$sisow->setPayPalLocale($arr['billing_countrycode']);
 		
 		if($payment == 'ideal')
 			$sisow->issuerId = $_POST['issuerid'];
@@ -129,7 +128,7 @@ class Payment extends PaymentModule
 					$orderstatus = Configuration::get('SISOW_PENDING');
 				}
 				
-				if($createorder == "after")
+				if($createorder == "after" || $payment == 'klarna' || $payment == 'klarnaacc')
 				{
 					if (floatval(substr(_PS_VERSION_, 0, 3)) < 1.4)
 						$paymentclass->validateOrder($this->context->cart->id, $orderstatus, $total, $paymentclass->displayName); //, NULL, NULL, $currency->id);
@@ -144,12 +143,14 @@ class Payment extends PaymentModule
 				}
 				
 				$db = Db::getInstance();
+				$result = $db->Execute("delete from `" . _DB_PREFIX_ . "sisow` where `id_order` = " . $order->id);
+				
 				$result = $db->Execute("
 				INSERT INTO `" . _DB_PREFIX_ . "sisow`
-				(`id_order`, `trxid`, `status` ,`consumeraccount`,`consumername`,`consumercity`,`payment`)
+				(`id_order`, `trxid`, `status` ,`consumeraccount`,`consumername`,`payment`)
 				VALUES
-				(" . $order->id . ", '" . $sisow->trxId . "', '".$status."', '', '', '', '".$paymentclass->paymentcode."')");
-						
+				(" . $order->id . ", '" . $sisow->trxId . "', '".$status."', '', '', '".$paymentclass->paymentcode."')");
+										
 				Tools::redirectLink('order-confirmation.php?id_cart='.$order->id_cart.'&id_module='.$paymentclass->id.'&id_order='.$order->id.'&key='.$order->secure_key . $pendingklarna);	
 			}
 			else

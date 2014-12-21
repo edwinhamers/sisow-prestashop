@@ -78,8 +78,8 @@ function _prepare($cart, $module = false) {
 	}
 
 	// shipping
-	if (($shipping = $cart->getOrderShippingCost($cart->id_carrier, false)) > 0) {
-		$shiptax = $cart->getOrderShippingCost($cart->id_carrier, true);
+	if (($shipping = $cart->getPackageShippingCost($cart->id_carrier, false)) > 0) {
+		$shiptax = $cart->getPackageShippingCost($cart->id_carrier, true);
 		$arr['shipping'] = round($shipping * 100, 2);
 		
 		$arr['product_id_' . $i] = 'shipping';
